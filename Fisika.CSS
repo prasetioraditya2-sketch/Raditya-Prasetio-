@@ -1,0 +1,375 @@
+
+/* =================================
+   COMIC BOOK PORTFOLIO - PTK THEATER
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@400;500;700;900&display=swap');
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --red: #df3939;
+    --yellow: #f5ca45;
+    --black: #202020;
+    --cream: #f4f0e7;
+    --white: #fffdf7;
+    --gray: #666666;
+}
+
+body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND TEXTURE */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(#00000018 1px, transparent 1px);
+    background-size: 9px 9px;
+}
+
+/* HEADER */
+
+.site-header {
+    background: var(--yellow);
+    border-bottom: 4px solid var(--black);
+    padding: 0 7%;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    color: var(--black);
+    text-decoration: none;
+    font-family: 'Bangers', sans-serif;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.back-link {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.back-link:hover {
+    color: var(--red);
+}
+
+/* HERO */
+
+.hero {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    padding: 65px 15px 75px;
+}
+
+.eyebrow {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    border: 2px solid var(--black);
+    padding: 7px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    margin-bottom: 14px;
+    font-family: 'Bangers', sans-serif;
+    font-size: clamp(45px, 8vw, 75px);
+    line-height: 1.1;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px white;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* CONTAINER */
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* INTRO */
+
+.intro {
+    text-align: center;
+    padding: 48px 10px 28px;
+}
+
+.intro h2 {
+    margin-bottom: 8px;
+    color: var(--red);
+    font-family: 'Bangers', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+.intro p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--gray);
+    font-size: 15px;
+}
+
+/* PHOTO SECTION */
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    padding: 15px 0 45px;
+}
+
+/* PHOTO CARD */
+
+.photo-card {
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 5px 5px var(--black);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px var(--red);
+}
+
+/* PHOTO FRAME */
+
+.photo-frame {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+    background: #e2e8f0;
+    border-bottom: 3px solid var(--black);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .3s ease;
+}
+
+.photo-card:hover .photo-frame img {
+    transform: scale(1.04);
+}
+
+/* PHOTO LABEL */
+
+.photo-label {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--yellow);
+    color: var(--black);
+    border: 2px solid var(--black);
+    padding: 5px 11px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* PHOTO CONTENT */
+
+.photo-content {
+    padding: 20px;
+}
+
+.photo-content h3 {
+    margin-bottom: 8px;
+    color: var(--red);
+    font-family: 'Bangers', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.photo-content p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* SECTION TITLE */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.section-number {
+    display: inline-block;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    padding: 3px 9px;
+    font-weight: 900;
+    font-size: 13px;
+}
+
+/* CLOSING NOTE */
+
+.note {
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    box-shadow: 5px 5px var(--black);
+    padding: 30px;
+    text-align: center;
+    margin: 5px 0 45px;
+}
+
+.note h2 {
+    margin-bottom: 8px;
+    color: var(--red);
+    font-family: 'Bangers', sans-serif;
+    font-size: 35px;
+    letter-spacing: 1px;
+}
+
+.note p {
+    color: var(--black);
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: var(--black);
+    color: #eee;
+    text-align: center;
+    padding: 28px 15px;
+    border-top: 5px solid var(--red);
+    font-size: 13px;
+}
+
+.footer p {
+    margin-bottom: 7px;
+}
+
+.footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 650px) {
+
+    .site-header {
+        padding: 0 5%;
+    }
+
+    .navbar {
+        min-height: 65px;
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .back-link {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 48px 5px 55px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .intro {
+        padding-top: 35px;
+    }
+
+    .intro h2 {
+        font-size: 30px;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .photo-frame {
+        height: 260px;
+    }
+
+    .photo-content {
+        padding: 18px;
+    }
+
+    .photo-content h3 {
+        font-size: 25px;
+    }
+
+    .note {
+        padding: 24px 17px;
+    }
+
+    .note h2 {
+        font-size: 29px;
+    }
+}

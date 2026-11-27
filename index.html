@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raditya Comic Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =================================
+   MAIN STYLE
+================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f0e7;
+    color: #202020;
+    font-family: 'Roboto Condensed', sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --red: #df3939;
+    --yellow: #f5ca45;
+    --black: #202020;
+    --cream: #fffdf7;
+    --gray: #666;
+}
+
+/* BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(#00000018 1px, transparent 1px);
+    background-size: 9px 9px;
+}
+
+/* =================================
+   NAVIGATION
+================================= */
+
+nav {
+    background: var(--cream);
+    border-bottom: 3px solid var(--black);
+    padding: 17px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Bangers', sans-serif;
+    font-size: 27px;
+    letter-spacing: 1px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--red);
+}
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+    min-height: 430px;
+    background: var(--yellow);
+    border-bottom: 4px solid var(--black);
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 30px solid rgba(255,255,255,.25);
+    border-radius: 50%;
+    right: 10%;
+    top: 50px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+}
+
+.hero-label {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 7px 15px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    border: 2px solid var(--black);
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: 'Bangers', sans-serif;
+    font-size: clamp(65px, 11vw, 115px);
+    line-height: .9;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px white;
+}
+
+.hero h1 span {
+    color: var(--red);
+    text-shadow: 3px 3px var(--black);
+}
+
+.hero p {
+    margin-top: 22px;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 480px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    background: var(--black);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--black);
+    transition: .2s;
+}
+
+.hero-button:hover {
+    background: var(--red);
+}
+
+/* =================================
+   GENERAL SECTION
+================================= */
+
+.container {
+    width: 88%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section {
+    margin: 85px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.section-number {
+    background: var(--red);
+    color: white;
+    font-family: 'Bangers', sans-serif;
+    font-size: 25px;
+    padding: 7px 17px;
+    border: 2px solid var(--black);
+}
+
+.section-heading h2 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+.section-description {
+    color: var(--gray);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* =================================
+   PROFILE
+================================= */
+
+.profile-box {
+    background: var(--cream);
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px var(--black);
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    position: relative;
+}
+
+.profile-image {
+    width: 210px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid var(--black);
+    box-shadow: 5px 5px var(--red);
+    flex-shrink: 0;
+}
+
+.profile-info h3 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 38px;
+    color: var(--red);
+    margin-bottom: 15px;
+}
+
+.profile-info p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.profile-tag {
+    display: inline-block;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    padding: 7px 12px;
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* =================================
+   ACADEMIC SKILLS
+================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--cream);
+    padding: 23px;
+    border: 2px solid var(--black);
+    border-bottom: 6px solid var(--red);
+    transition: .2s;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+}
+
+.skill-index {
+    display: inline-block;
+    background: var(--yellow);
+    border: 1px solid var(--black);
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.progress {
+    height: 12px;
+    background: #ddd;
+    border: 1px solid var(--black);
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--red);
+}
+
+.skill-percent {
+    text-align: right;
+    font-size: 12px;
+    font-weight: 900;
+    margin-top: 7px;
+}
+
+/* =================================
+   MISSION RECORDS
+================================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.project-card {
+    background: var(--cream);
+    padding: 25px;
+    border: 3px solid var(--black);
+    box-shadow: 5px 5px var(--black);
+    transition: .2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px var(--red);
+}
+
+.project-number {
+    font-family: 'Bangers', sans-serif;
+    font-size: 55px;
+    color: var(--red);
+}
+
+.project-category {
+    display: inline-block;
+    background: var(--yellow);
+    padding: 5px 10px;
+    border: 1px solid var(--black);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+.project-card h3 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.project-button {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    text-decoration: none;
+    padding: 10px 17px;
+    border: 2px solid var(--black);
+    font-size: 13px;
+    font-weight: 900;
+    transition: .2s;
+}
+
+.project-button:hover {
+    background: var(--yellow);
+    color: var(--black);
+}
+
+/* =================================
+   MOTTO
+================================= */
+
+.motto {
+    background: var(--red);
+    color: white;
+    padding: 45px 25px;
+    text-align: center;
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px var(--black);
+}
+
+.motto h2 {
+    font-family: 'Bangers', sans-serif;
+    font-size: clamp(38px, 7vw, 65px);
+    letter-spacing: 2px;
+    text-shadow: 3px 3px var(--black);
+}
+
+.motto p {
+    margin-top: 15px;
+    font-size: 17px;
+}
+
+/* =================================
+   CONTACT PERSON
+================================= */
+
+.contact-box {
+    background: var(--cream);
+    padding: 40px 25px;
+    text-align: center;
+    border: 3px solid var(--black);
+    border-top: 8px solid var(--yellow);
+    box-shadow: 6px 6px var(--black);
+}
+
+.contact-box h2 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 45px;
+    color: var(--red);
+}
+
+.contact-box p {
+    margin: 12px auto 25px;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.contact-links a {
+    background: var(--black);
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid var(--black);
+    transition: .2s;
+}
+
+.contact-links a:hover {
+    background: var(--red);
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    background: var(--black);
+    color: white;
+    padding: 30px 15px;
+    text-align: center;
+    border-top: 5px solid var(--red);
+}
+
+.footer-title {
+    font-family: 'Bangers', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 65px 7%;
+    }
+
+    .hero::after {
+        width: 150px;
+        height: 150px;
+        right: -40px;
+    }
+
+    .profile-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 210px;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    section {
+        margin: 65px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .profile-info h3 {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="#" class="logo">
+        RADITYA<span>COMICS</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="#profile">PROFILE</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#projects">MISSIONS</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            PERSONAL PORTFOLIO // 2026
+        </div>
+
+        <h1>
+            MY<br>
+            <span>STORY.</span>
+        </h1>
+
+        <p>
+            Every person has a story.
+            This is a collection of my journey,
+            achievements, and experiences.
+        </p>
+
+        <a href="#profile" class="hero-button">
+            EXPLORE MY STORY →
+        </a>
+
+    </div>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- PROFILE -->
+
+<section id="profile">
+
+    <div class="section-heading">
+        <span class="section-number">01</span>
+        <h2>Character Profile</h2>
+    </div>
+
+    <p class="section-description">
+        Get to know the person behind this portfolio.
+    </p>
+
+    <div class="profile-box">
+
+        <img
+            src="Raditos.jpg"
+            alt="Foto Raditya"
+            class="profile-image"
+        >
+
+        <div class="profile-info">
+
+            <h3>RADITYA PRASETIO</h3>
+
+            <p>
+                Halo! Saya Raditya Prasetio, seorang pelajar
+                yang memiliki ketertarikan terhadap dunia
+                pendidikan, teknologi, dan berbagai pengalaman
+                baru.
+
+                Saya memiliki cita-cita menjadi seorang
+                nahkoda yang berlayar di laut lepas.
+                Suatu hari nanti, saya ingin mengemudikan
+                kapal kargo EVERGREEN.
+            </p>
+
+            <div class="profile-tag">
+                STUDENT // FUTURE CAPTAIN
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACADEMIC SKILLS -->
+
+<section id="skills">
+
+    <div class="section-heading">
+        <span class="section-number">02</span>
+        <h2>Academic Skills</h2>
+    </div>
+
+    <p class="section-description">
+        My abilities and learning progress.
+    </p>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+
+            <span class="skill-index">SKILL 01</span>
+
+            <h3>Matematika</h3>
+
+            <p>
+                Memahami konsep matematika,
+                melakukan perhitungan, dan
+                menyelesaikan berbagai soal.
+            </p>
+
+            <div class="progress">
+                <div class="progress-fill" style="width:90%"></div>
+            </div>
+
+            <div class="skill-percent">90% - SAMPLE</div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <span class="skill-index">SKILL 02</span>
+
+            <h3>Bahasa Inggris</h3>
+
+            <p>
+                Memahami kosakata, membaca teks,
+                dan mengembangkan kemampuan
+                komunikasi bahasa Inggris.
+            </p>
+
+            <div class="progress">
+                <div class="progress-fill" style="width:95%"></div>
+            </div>
+
+            <div class="skill-percent">95% - SAMPLE</div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <span class="skill-index">SKILL 03</span>
+
+            <h3>Informatika</h3>
+
+            <p>
+                Mempelajari dasar komputer,
+                teknologi, algoritma, HTML,
+                dan CSS.
+            </p>
+
+            <div class="progress">
+                <div class="progress-fill" style="width:85%"></div>
+            </div>
+
+            <div class="skill-percent">85% - SAMPLE</div>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <span class="skill-index">SKILL 04</span>
+
+            <h3>IPA</h3>
+
+            <p>
+                Mempelajari berbagai fenomena alam,
+                eksperimen, dan konsep sains
+                dalam kehidupan sehari-hari.
+            </p>
+
+            <div class="progress">
+                <div class="progress-fill" style="width:90%"></div>
+            </div>
+
+            <div class="skill-percent">90% - SAMPLE</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+   
+<!-- MISSION RECORDS -->
+
+<sect id="projects">
+
+    <div class="section-heading">
+        <span class="section-number">03</span>
+        <h2>Mission Records</h2>
+    </div>
+
+    <p class="section-description">
+        A collection of my school projects and experiences.
+    </p>
+
+    <div class="projects-grid">
+
+        <!-- PROJECT 01 -->
+
+        <div class="project-card">
+
+            <div class="project-number">01.</div>
+
+            <div class="project-category">
+                INFORMATICS
+            </div>
+
+            <h3>Website Portfolio</h3>
+
+            <p>
+                Membuat website pribadi menggunakan HTML
+                dan CSS untuk menampilkan profil,
+                kemampuan akademik, dan berbagai karya.
+            </p>
+
+            <a href="#" class="project-button">
+                VIEW PROJECT ↗
+            </a>
+
+        </div>
+
+        <!-- PROJECT 02 -->
+
+        <div class="project-card">
+
+            <div class="project-number">02.</div>
+
+            <div class="project-category">
+                PTK
+            </div>
+
+            <h3>Project PTK</h3>
+
+            <p>
+                Kumpulan kegiatan dan dokumentasi
+                PTK yang saya lakukan tahun lalu.
+            </p>
+
+            <a href="Project PTK.html" class="project-button">
+                VIEW PROJECT ↗
+            </a>
+
+        </div>
+
+        <!-- PROJECT 03 -->
+
+        <div class="project-card">
+
+            <div class="project-number">03.</div>
+
+            <div class="project-category">
+                INFORMATICS
+            </div>
+
+            <h3>Project Informatika</h3>
+
+            <p>
+                Kumpulan tugas dan proyek Informatika,
+                mulai dari pembelajaran komputer,
+                pemrograman, hingga pembuatan website.
+            </p>
+
+            <a href="Project Infor.html" class="project-button">
+                VIEW PROJECT ↗
+            </a>
+
+        </div>
+
+        <!-- PROJECT 04 -->
+
+        <div class="project-card">
+
+            <div class="project-number">04.</div>
+
+            <div class="project-category">
+                PHYSICS
+            </div>
+
+            <h3>Project Fisika</h3>
+
+            <p>
+                Kumpulan tugas, eksperimen, dan proyek
+                Fisika yang berkaitan dengan konsep
+                serta penerapan ilmu dalam kehidupan.
+            </p>
+
+            <a href="Fisika.html" class="project-button">
+                VIEW PROJECT ↗
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+<!-- MOTTO -->
+
+<section class="motto">
+
+    <h2>
+        EVERY STORY<br>
+        HAS A BEGINNING.
+    </h2>
+
+    <p>
+        Keep learning. Keep exploring.
+        This is only the beginning.
+    </p>
+
+</section>
+
+
+</div>
+
+
+<!-- CONTACT PERSON -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>CONTACT PERSON</h2>
+
+            <p>
+                Thank you for visiting my portfolio!
+                Feel free to contact me through the
+                platforms below.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="https://wa.me/6281211979962">
+                    WHATSAPP
+                </a>
+
+                <a href="https://www.instagram.com/_raditos/">
+                    INSTAGRAM
+                </a>
+
+                <a href="mailto:prasetioraditya2@gmail.com">
+                    EMAIL
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-title">
+        RADITYA COMIC PORTFOLIO
+    </div>
+
+    <p>END OF CHAPTER // 001</p>
+
+    <p>© 2026 Raditya Prasetio</p>
+
+    <p>Created with HTML and CSS</p>
+
+</footer>
+
+</body>
+</html>
